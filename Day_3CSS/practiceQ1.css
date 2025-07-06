@@ -1,0 +1,23 @@
+#main{
+    width: 70px;
+    border: 2px solid black;
+    height: 200px;
+    
+}
+.circle{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 10px;
+    border-radius:50%;
+
+}
+#redcolor{
+    background-color:red;
+}
+#yellowcolor{
+    background-color:yellow;
+}
+#greencolor{
+    background-color:green;
+}
