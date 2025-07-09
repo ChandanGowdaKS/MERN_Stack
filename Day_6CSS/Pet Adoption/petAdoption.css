@@ -1,0 +1,26 @@
+h2{
+    color:brown;
+}
+span{
+    color:chocolate
+}
+#pets{
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+
+}
+.card{
+    width: 450px;
+    height: 900px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+img{
+    border-radius: 20px;
+    width :435px;
+    height: 200px;
+    
+}
