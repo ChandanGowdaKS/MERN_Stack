@@ -1,0 +1,20 @@
+*{
+    font-family: "Michroma", sans-serif;
+    margin:0;
+    padding:0;
+    background-color: #000;
+    color:#fff;
+}
+.main{
+    display:flex;
+    height:100vh;
+}
+.sidebar{
+    background-color:aqua;
+}
+.main-content{
+    background-color: red;
+}
+.music-player{
+    background-color:blue
+}
