@@ -1,0 +1,137 @@
+body{
+    background-color:#061429;
+    color:#fff;
+}
+.button{
+    background-color: #061429;
+    color:#fff; 
+    border-radius:0.5rem;
+    cursor:pointer;
+    padding:.5rem;
+    margin:0.25rem;
+    
+}
+.contents h1{
+    margin-left: 80px;
+}
+.contents{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    border-bottom: 2px solid #fff;
+    margin-right:20px;
+}
+h3{
+    margin-left:20px;
+    font-family:Rubik,sans-serif;
+    font-size: bolder;
+}
+
+.button:hover{
+    background-color:rgb(199, 105, 127);
+    /* box-shadow:5px 5px #d5f067; */
+}
+
+.full-bio-grid{
+    display:grid;
+    margin:20px;
+    grid-template-columns:repeat(2,1fr);
+    justify-items:right;
+    padding:2rem;
+    
+    gap:50px;
+}
+.profile-pic img {
+    border-radius: 50%;
+    border: 8px solid #fff;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.social-media i{
+    opacity:0.8;
+}
+.social-media i:hover{
+    opacity:1;
+    font-size :1.5rem;
+    color:red;
+}
+.bio-text{
+    font-family: "Michroma", sans-serif;
+    margin-left:50px;
+    line-height:1.75rem;
+    font-size: large;
+    font-weight:550;
+} 
+.bio-text span{
+    font-size: 1.2rem;
+    font-family: "Permanent Marker", cursive;
+    font-weight: bold;
+}
+.skills{
+    display:flex;
+    flex-direction:column;
+    margin:5px;
+    flex-wrap:wrap;
+}
+.Heading-skill {
+    /* color: #2c3e50; */
+    font-size: 2em;
+    font-family: "Permanent Marker", cursive;
+    font-weight: bold;
+    text-align: center;
+    border:5px solid #fff;
+}
+.Heading-skill:hover{
+    cursor:pointer;
+}
+.main-prog-skills {
+    font-weight:bolder;
+    font-size:1.5rem;
+    padding:1rem;
+    margin: 5px;
+    border: 5px solid #afd6d8;
+    
+}
+
+.main-prog-skills a,i{
+    color:#fff;
+    margin-right:10px;
+    margin-bottom:10px;
+    text-decoration:none;
+
+}
+
+.colory:hover{
+    color: rgb(60, 205, 79);
+    opacity: 1;
+}
+
+@media(max-width:768px) {
+    .contents {
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+
+    .bio-text {
+        font-size: large;
+        font-weight: bold;
+        line-height: 2rem;
+    }
+
+    .full-bio-grid {
+        display: flex;
+        justify-items: center;
+        flex-direction: column;
+        flex-wrap:wrap;
+    }
+        .main-prog-skills a,i{
+            display:flex;
+            flex-wrap:wrap;
+    
+        }
+
+}
