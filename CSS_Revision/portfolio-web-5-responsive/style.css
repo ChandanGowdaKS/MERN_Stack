@@ -34,12 +34,12 @@ h3{
 
 .full-bio-grid{
     display:grid;
-    margin:20px;
+    margin:5px;
     grid-template-columns:repeat(2,1fr);
     justify-items:right;
-    padding:2rem;
+    padding:1rem;
     
-    gap:50px;
+    gap:20px;
 }
 .profile-pic img {
     border-radius: 50%;
@@ -52,15 +52,17 @@ h3{
 }
 .social-media i{
     opacity:0.8;
+    font-size:1.5rem;
 }
 .social-media i:hover{
     opacity:1;
-    font-size :1.5rem;
+    font-size :2rem;
     color:red;
 }
-.bio-text{
+.bio-text {
     font-family: "Michroma", sans-serif;
-    margin-left:50px;
+    margin-left:0px;
+    width:auto;
     line-height:1.75rem;
     font-size: large;
     font-weight:550;
@@ -120,6 +122,7 @@ h3{
         font-size: large;
         font-weight: bold;
         line-height: 2rem;
+        left:1px;
     }
 
     .full-bio-grid {
