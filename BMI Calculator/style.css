@@ -1,0 +1,27 @@
+body{
+    background-color:;
+}
+.main_div{
+    background-color:#00ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.bmi{
+    display: flex;
+    background-color: #f0f0f0;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 5px 5px solid #bf9090;
+    border: 2px solid #000;
+    margin: 20px;
+    padding: 20px;
+}
+#calculate_bmi{
+    background-color:skyblue;
+    border: 2px solid #000;
+    margin: 10px;
+    color: #352716;
+}
