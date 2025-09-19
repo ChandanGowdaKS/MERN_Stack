@@ -9,5 +9,12 @@
     <h2>This Account belongs to @<%= username %><h2>
         <button>Follow</button>
         <button>Message</button>
+
+    <h3>The account follows you:</h3>
+        <ul>
+            <% for (let names of followers){ %>
+                <li> <%= names %> </li>
+                <% } %>
+        </ul>
 </body>
 </html>
