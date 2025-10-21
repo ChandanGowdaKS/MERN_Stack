@@ -1,6 +1,16 @@
 const { faker } = require('@faker-js/faker');
 const mysql = require('mysql2');
+const express = require("express");
+const app = express();
+let port = 3000;
+const path = require("path");
+const methodOverride = require("method-override");
 
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "/views"));
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -8,25 +18,70 @@ const connection = mysql.createConnection({
   password: "Chandu@9698"
 });
 
-let q = "SHOW TABLES"
-try {
+// creation of fake datas
+let createRandomUser = () =>  {
+  return [
+    faker.string.uuid(),
+    faker.internet.username(),
+    faker.internet.email(),
+    faker.internet.password(),
+
+  ];
+  };
+
+  // show all user data
+app.get("/users", (req, res) => {
+  let q = `SELECT * FROM user`;
+  try {
+    connection.query(q, (err, users) => {
+      if (err) throw err;
+      res.render("usersdata.ejs", { users });
+    });
+  } catch (err){
+    res.send("error occured");
+  }
+})
+
+
+// home route , couting total number of users
+app.get("/", (req, res) => {
+  let q = `SELECT count(*) FROM USER`;
+  try {
   connection.query(q, (err, result) => {
     if (err) throw err;
     console.log(result);
+    let count = result[0]["count(*)"];
+    res.render("home.ejs",{count});
   });
-} catch {
-  console.log(err);
+} catch (err) {
+    console.log(err);
+    res.send("some error");
 }
+})
 
-connection.end();
+// editing 
+app.get("/users/:id/edit", (req, res) => {
+  let { id } = req.params;
 
-let createRandomUser = () =>  {
-  return {
-    Id: faker.string.uuid(),
-    username: faker.internet.username(),
-    email: faker.internet.email(),
-    password: faker.internet.password(),
-
-  };
+  let q = `SELECT * From user WHERE userId = '${id}' `;
+  try {
+  connection.query(q, (err, result) => {
+    if (err) throw err;
+    let user = result[0];
+    res.render("edit.ejs",{user})
+    
+  });
+} catch (err) {
+    console.log(err);
+    res.send("some error");
 }
-console.log(createRandomUser());
+  
+})
+
+// Update DB route
+app.patch("/users/:id", (req, res) => {
+  res.send("updated");
+})
+app.listen(port, () => {
+  console.log("port is listening");
+})
